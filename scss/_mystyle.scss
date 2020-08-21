@@ -1,0 +1,40 @@
+@mixin flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+$red: rgba(247, 47, 47, 0.794);
+$bg: #677483;
+$primary: #f6f9fc;
+$maroon: rgba(red, .5);
+
+%copy {
+	padding: 10px;
+	margin: 10px;
+	box-sizing: border-box;
+	color: $primary;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+			  box-sizing: border-box;
+	outline: none;
+ }
+
+.open{
+	transform: translateX(-300px);
+	transition: all .4s ease-in;
+}
+
+.openBurger{
+	transform: translateX(-250px);
+	transition: all .4s ease-in;
+}
+.openIcons{
+	transform: translateX(-300px);
+	transition: all .4s ease-in;
+}
+ 

@@ -1,0 +1,282 @@
+@import "_mystyle";
+
+body {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	background-color: #333;
+	overflow: hidden;
+}
+
+.nav {
+	width: 100%;
+
+	&__body {
+		display: flex;
+		width: 1200px;
+		margin: 40px auto;
+		justify-content: space-between;
+	}
+
+	&__logo {
+		color: #ffff;
+		font-size: 35px;
+		text-transform: uppercase;
+		font-weight: bold;
+		cursor: pointer;
+	}
+
+	&__burger {
+		color: #ffff;
+		font-size: 30px;
+		cursor: pointer;
+	}
+}
+
+.text {
+	max-width: 450px;
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 80px;
+
+	&__title {
+		font-size: 3em;
+	}
+
+	&__bigtitle {
+		font-size: 165px;
+		line-height: .9;
+		font-weight: bold;
+	}
+
+	&__small {
+		letter-spacing: .5px;
+		line-height: 25px;
+	}
+
+	&__btn {
+		padding: 10px 20px;
+		background-color: #fff;
+		display: inline-block;
+		margin: 10px 0;
+		cursor: pointer;
+		transition: all ease-in .3s;
+
+
+		&:hover {
+			transform: perspective(300px) rotate(10deg);
+		}
+
+		a {
+			text-decoration: none;
+			font-size: 16px;
+			color: #000;
+			text-transform: uppercase;
+			font-weight: bold;
+			letter-spacing: 1px;
+		}
+	}
+}
+
+.icon {
+	width: 50px;
+	height: 200px;
+	background-color: #fff;
+	position: absolute;
+	right: 0;
+	top: 40%;
+	transition: all ease-in .4s;
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		height: 100%;
+		width: 100%;
+		align-items: center;
+
+		i {
+			font-size: 24px;
+			color: #000;
+			transition: all .2s ease-in;
+
+			&:hover {
+				transform: scale(1.15);
+				color: #00e600;
+				text-shadow: 6px 6px 26px #038b03;
+			}
+		}
+	}
+}
+
+.info {
+	// width: 1000px;
+	color: #fff;
+	display: flex;
+	margin: 0 auto;
+	// justify-content: flex-start;
+	position: absolute;
+	bottom: 0;
+	left: 80px;
+
+	&__items {
+		background: rgba(14, 78, 1, 0.63);
+		padding: 20px;
+		margin-right: 200px;
+		width: 400px;
+	}
+
+	&__title {
+		font-size: 18px;
+		margin-bottom: 5px;
+		letter-spacing: 1px;
+	}
+}
+
+.imgbox {
+	position: absolute;
+	bottom: 0;
+	right: 100px;
+	z-index: 100;
+	display: flex;
+	justify-content: flex-end;
+
+	img {
+		width: 450px;
+	}
+}
+
+.bgvideo {
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, .2);
+		z-index: -1;
+	}
+
+	video {
+		width: 100%;
+		// position: fixed;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -2;
+	}
+}
+
+.menu {
+	width: 300px;
+	height: 100vh;
+	position: absolute;
+	background: rgba(1, 92, 177, 0.904);
+	background: url(../img/img3.jpg);
+	background-size: cover;
+	top: 0;
+	right: -300px;
+	transition: all ease-in .4s;
+	z-index: 10;
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(#000, .15);
+		z-index: -1;
+	}
+
+	&__items {
+
+
+		ul {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: space-around;
+
+
+			li {
+				list-style: none;
+				margin: 20px 56px;
+				transition: all ease-in .3s;
+
+
+				&:hover {
+					transform: perspective(600px) rotate(-10deg);
+
+				}
+				&:nth-child(1) {
+					margin-top: 35px;
+				}
+
+				a {
+					text-decoration: none;
+					color: #ffffffff;
+					font-size: 30px;
+					margin: auto;
+					transition: all ease-in .3s;
+
+					&:hover {
+						color: #00ff00;
+
+					}
+
+					// &:after {
+					// 	content: "";
+					// 	width: 0;
+					// 	height: 2px;
+					// 	background-color: orange;
+					// 	display: block;
+					// 	transition: all .3s ease-in-out;
+
+					// }
+
+					// &:hover:after {
+					// 	width: 50%;
+					// 	margin: auto;
+					// }
+				}
+			}
+		}
+	}
+}
+
+// burger animation => 
+
+.nav__burger {
+	transition: all .4s ease-in;
+
+	span {
+		width: 34px;
+		height: 3px;
+		background-color: #fff;
+		display: block;
+		margin: 6px;
+		transition: all .4s ease-in-out;
+
+	}
+}
+
+.active {
+	span {
+		&:nth-child(1) {
+			transform: translate(18px, 4px) rotate(35deg);
+			transition: all .4s ease-in-out;
+
+			width: 17px;
+		}
+
+		&:nth-child(3) {
+			transform: translate(18px, -4px) rotate(-35deg);
+			transition: all .4s ease-in-out;
+
+			width: 17px;
+		}
+	}
+}
